@@ -1,1 +1,7 @@
 <%= @message %>
+<br>
+<% @users.each do |user| %>
+  <%= user.id %>.
+  <%= user.username %>
+  <%= link_to 'Show', user_path(user.id) %> <br>
+<% end  %>

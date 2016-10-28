@@ -1,0 +1,6 @@
+<%= @message %>
+<br>
+<% @posts.each do |post| %>
+  <%= post.id %>.
+  <%= link_to post.title, post_path(post.id) %> <br>
+<% end  %>

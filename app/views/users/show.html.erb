@@ -1,0 +1,7 @@
+<%= @message %>
+<br>
+<%= @user.id %>.
+<%= @user.username %>
+<%= @user.email %>
+<br>
+<%= link_to 'Destroy',  { action: :destroy, id: @user.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
