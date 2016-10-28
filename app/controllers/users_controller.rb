@@ -5,18 +5,15 @@ class UsersController < ApplicationController
   end
   def new
     @message = "NEW FLAMEO!"
+    @user = User.new
   end
   def create
     # This action receives data from #new and creates a new User.
-
     # .create returns the obj that was just created
-    @new_user = User.create(
-      username: params[:user][:username],
-      password: params[:user][:password],
-      email: params[:user][:email]
-    )
+    @new_user = User.new(user_params)
     # check if .create did its job
-    if @new_user
+    @new_user.save
+    if @new_user.save
       puts "SUCCESS"
       redirect_to url_for(:controller => :users, :action => :index)
     else
@@ -35,11 +32,7 @@ class UsersController < ApplicationController
   end
   def update
     @user = User.find(params[:id])
-    @user.update({
-      username: params[:user][:username],
-      password: params[:user][:password],
-      email: params[:user][:email]
-    })
+    @user.update(user_params)
 
     if (@user)
       redirect_to url_for(:controller => :users, :action => :index)
@@ -50,5 +43,10 @@ class UsersController < ApplicationController
   def destroy
    User.delete(params[:id])
    redirect_to url_for(:controller => :users, :action => :index)
+ end
+
+ private
+ def user_params
+   params.require(:user).permit(:username, :password, :email)
  end
 end

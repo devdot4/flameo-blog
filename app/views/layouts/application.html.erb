@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flame-io</title>
+    <title>Flameo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,32 @@
   </head>
 
   <body>
+      <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="navbar-header">
+            <a href="/"><img class="navbar-brand logo" src="../images/flameo.png"/></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/users">Users</a>
+                </li>
+                <li>
+                    <a href="/posts">Posts</a>
+                </li>
+            </ul>
+            <div class="navbar-header pull-right">
+                <p class="navbar-text">
+                    <a href="/users/new" class="navbar-link">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </nav>
     <%= yield %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
