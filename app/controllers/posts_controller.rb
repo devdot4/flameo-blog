@@ -38,8 +38,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.update({
       title: params[:post][:title],
-      content: params[:post][:content],
-      user_id: params[:post][:user_id]
+      content: params[:post][:content]
     })
 
     if (@post)
