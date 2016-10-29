@@ -21,20 +21,31 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+              <% if session[:user_id] %>
                 <li>
                     <a href="/users">Users</a>
                 </li>
                 <li>
                     <a href="/posts">Posts</a>
                 </li>
+                <% end %>
             </ul>
             <div class="navbar-header pull-right">
+                <% if session[:user_id] %>
+                <p class="navbar-text">
+                  <a class="navbar-link"><%= "#{@user.username}" if @user %></a>
+                </p>
+                <p class="navbar-text">
+                    <a href="/signout" class="navbar-link">Sign out</a>
+                </p>
+                <% else %>
                 <p class="navbar-text">
                     <a href="/signup" class="navbar-link">Sign up</a>
                 </p>
                 <p class="navbar-text">
-                    <a href="/login" class="navbar-link">Sign in</a>
+                    <a href="/signin" class="navbar-link">Sign in</a>
                 </p>
+                <% end %>
             </div>
         </div>
     </nav>

@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   put    '/users/:id'      => 'users#update'
   patch  '/users/:id'      => 'users#update'
   delete '/users/:id'      => 'users#destroy'
-  # login
-  get    '/login'          =>  "users#login_form"
-  post   '/login'          =>  "users#create_login"
-  # logout
-  get    '/logout'         =>  "users#logout"
+  # signin
+  get    '/signin'          =>  "users#signin"
+  post   '/signin'          =>  "users#create_signin"
+  # signout
+  get    '/signout'         =>  "users#signout"
 
   # Posts routes
   get    '/posts'          => 'posts#index', as: "posts"
