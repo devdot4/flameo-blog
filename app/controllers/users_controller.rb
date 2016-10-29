@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     @new_user.save
     if @new_user.save
       puts "SUCCESS"
+      session[:user_id] = @new_user.id
       redirect_to url_for(:controller => :users, :action => :index)
     else
       puts "ERROR"
@@ -23,7 +24,6 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
-    @message = "This route shows all info for an individual user named: #{@user.username} #{@user.password}."
   end
   def edit
     # Must have 'shortcuts' in routes for this to work
@@ -41,9 +41,40 @@ class UsersController < ApplicationController
     end
   end
   def destroy
-   User.delete(params[:id])
-   redirect_to url_for(:controller => :users, :action => :index)
+    User.delete(params[:id])
+    session.destroy
+    redirect_to url_for(:controller => :users, :action => :index)
  end
+
+ # form to login
+  def login_form
+    # if already logged in:
+    if session[:user_id]
+      @message = "You're already logged in!"
+    else
+      @message = "This is the login page."
+    end
+  end
+
+  # check db & create a session
+  def create_login
+    @message = "message"
+
+    @user = User.where( username: params[:username], password: params[:password] ).first
+
+    if @user
+      session[:user_id] = @user.id
+      redirect_to url_for(:controller => :users, :action => :index)
+    else
+      redirect_to url_for(:controller => :users, :action => :login_form)
+    end
+  end
+
+  #
+  def logout
+    session.destroy
+    redirect_to url_for(:controller => :welcome, :action => :index)
+  end
 
  private
  def user_params

@@ -6,13 +6,19 @@ Rails.application.routes.draw do
 
   # Users routes
   get    '/users'          => 'users#index', as: "users"
-  get    '/users/new'      => 'users#new', as: "new_user"
+  # sign up
+  get    '/signup'         => 'users#new', as: "new_user"
   post   '/users'          => 'users#create'
   get    '/users/:id'      => 'users#show', as: "user"
   get    '/users/:id/edit' => 'users#edit', as: "edit_user"
   put    '/users/:id'      => 'users#update'
   patch  '/users/:id'      => 'users#update'
   delete '/users/:id'      => 'users#destroy'
+  # login
+  get    '/login'          =>  "users#login_form"
+  post   '/login'          =>  "users#create_login"
+  # logout
+  get    '/logout'         =>  "users#logout"
 
   # Posts routes
   get    '/posts'          => 'posts#index', as: "posts"
@@ -23,4 +29,5 @@ Rails.application.routes.draw do
   put    '/posts/:id'      => 'posts#update'
   patch  '/posts/:id'      => 'posts#update'
   delete '/posts/:id'      => 'posts#destroy'
+
 end
