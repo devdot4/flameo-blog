@@ -58,12 +58,10 @@ class UsersController < ApplicationController
     end
   end
 
-  #
   def signout
     session.destroy
     redirect_to url_for(:controller => :welcome, :action => :index)
   end
-
  private
  def user_params
    params.require(:user).permit(:username, :password, :email)

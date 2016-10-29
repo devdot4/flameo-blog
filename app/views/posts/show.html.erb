@@ -1,8 +1,16 @@
-<%= @message %>
-<br>
-<%= @post.id %>.
-<%= @post.title %>
-<br>
-<%= @post.content %>
-<br>
-<%= link_to 'Destroy',  { action: :destroy, id: @post.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="row">
+  <div class="col-md-4 col-centered text-center">
+		<%= @message %>
+		<br>
+		ID: <%= @post.id %>
+		<br>
+		Title: <%= @post.title %>
+		<br>
+		Post: <%= @post.content %>
+		<br>
+		<% if session[:user_id] == @post.user_id %>
+			<%= link_to "Edit", edit_post_path(@post) %>
+			<%= link_to "Delete", post_path(@post), method: :delete,	data: { confirm: "Do you really want to delete your post?" } %>
+		<% end %>
+	</div>
+</div>

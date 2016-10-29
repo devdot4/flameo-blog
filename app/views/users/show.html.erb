@@ -1,9 +1,12 @@
-<h1>Your profile</h1>
-<br>
-ID: <%= @user.id %><br>
-Username: <%= @user.username %><br>
-E-mail: <%= @user.email %>
-<br>
-<% if @user.id %>
-<%= link_to 'Destroy',  { action: :destroy, id: @user.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<div class="row">
+  <div class="col-md-4 col-centered text-center">
+    <br>
+    ID: <%= @user.id %><br>
+    Username: <%= @user.username %><br>
+    E-mail: <%= @user.email %>
+    <br>
+    <% if @user.id %>
+    <%= link_to 'Destroy',  { action: :destroy, id: @user.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+</div>

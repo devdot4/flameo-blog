@@ -2,7 +2,5 @@
 <%= @message %>
 <br>
 <% @users.each do |user| %>
-  <%= user.id %>.
-  <%= user.username %>
   <%= link_to user.username, user_path(user.id) %> <br>
 <% end %>

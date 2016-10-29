@@ -1,11 +1,19 @@
-<h1>Sign in here</h1>
-<%= @message %>
-<%= form_tag("/signin", method: "post") do %>
-
-  <%= label_tag(:username, "Username:") %>
-  <%= text_field_tag(:username) %><br>
-  <%= label_tag(:password, "Password:") %>
-  <%= password_field_tag(:password) %>
-
-  <%= submit_tag("Submit") %>
-<% end %>
+<div class="row">
+  <div class="col-md-4 col-centered text-center">
+    <h1 class="signin">Flameo awaits!</h1>
+      <br>
+    <%= form_tag("/signin", method: "post") do %>
+    <p class="signin">
+      <%= label_tag(:username, "Username") %>
+      <br/>
+      <%= text_field_tag(:username) %><br>
+      <br/>
+      <%= label_tag(:password, "Password") %>
+      <br/>
+      <%= password_field_tag(:password) %>
+    </p>
+      <br/>
+      <%= submit_tag("Sign in", :class => "btn-danger") %>
+    <% end %>
+  </div>
+</div>

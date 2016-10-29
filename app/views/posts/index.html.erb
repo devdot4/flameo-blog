@@ -1,6 +1,6 @@
+<h1>Main posts page</h1>
 <%= @message %>
 <br>
 <% @posts.each do |post| %>
-  <%= post.id %>.
   <%= link_to post.title, post_path(post.id) %> <br>
 <% end  %>
