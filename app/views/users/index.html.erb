@@ -1,6 +1,8 @@
-<h1>Main page</h1>
-<%= @message %>
-<br>
-<% @users.each do |user| %>
-  <%= link_to user.username, user_path(user.id) %> <br>
-<% end %>
+<div class="row">
+  <div class="col-md-4 col-centered text-center">
+    <h1>Main page</h1>
+    <%= @message %>
+    <br>
+    <% @users.each do |user| %>
+      <%= link_to user.username, user_path(user.id) %> <br>
+    <% end %>
