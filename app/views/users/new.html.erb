@@ -1,9 +1,21 @@
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %> <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %> <br>
-  <%= f.label :email %>
-  <%= f.email_field :email %> <br>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="col-md-4 col-centered text-center">
+    <h1 class="sign">You won't regret it!</h1>
+      <br>
+    <%= form_for @user do |f| %>
+      <%= f.label :username %>
+      <br>
+      <%= f.text_field :username %>
+      <br>
+      <%= f.label :password %>
+      <br>
+      <%= f.password_field :password %>
+      <br>
+      <%= f.label :email %>
+      <br>
+      <%= f.email_field :email %>
+      <br><br>
+      <%= submit_tag("Sign up", :class => "btn-danger") %>
+    <% end %>
+  </div>
+</div>

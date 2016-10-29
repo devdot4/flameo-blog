@@ -1,1 +1,11 @@
-<%= @message %>
+<div class="row">
+  <div class="col-md-12 text-center title centered" style="padding: 100px; padding-top: 50px; padding-bottom: 50px;">
+    <% if session[:user_id] %>
+    <h1 class="homeheader">Hey, friend</h1>
+    <img width="256px" height="256" src="../images/flameo-existing.gif"/>
+    <% else %>
+    <h1 class="homeheader">Welcome to Flameo, stranger!</h1>
+    <img width="256px" height="256" src="../images/flameo-stranger.gif"/>
+    <% end %>
+  </div>
+</div>

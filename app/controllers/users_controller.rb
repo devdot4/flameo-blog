@@ -38,11 +38,6 @@ class UsersController < ApplicationController
  end
 
   def signin
-    if session[:user_id]
-      @message = "You're already signed in!"
-    else
-      @message = "This is the signin page."
-    end
   end
 
   # check db & create a session
@@ -52,7 +47,7 @@ class UsersController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to url_for(:controller => :users, :action => :index)
+      redirect_to url_for(:controller => :welcome, :action => :index)
     else
       redirect_to url_for(:controller => :users, :action => :signin)
     end
@@ -60,7 +55,7 @@ class UsersController < ApplicationController
 
   def signout
     session.destroy
-    redirect_to url_for(:controller => :welcome, :action => :index)
+    redirect_to url_for(:controller => :users, :action => :signin)
   end
  private
  def user_params

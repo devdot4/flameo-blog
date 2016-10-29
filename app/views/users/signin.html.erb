@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-4 col-centered text-center">
-    <h1 class="signin">Flameo awaits!</h1>
+    <h1 class="sign">Flameo awaits!</h1>
       <br>
     <%= form_tag("/signin", method: "post") do %>
     <p class="signin">
@@ -15,5 +15,6 @@
       <br/>
       <%= submit_tag("Sign in", :class => "btn-danger") %>
     <% end %>
+  <%= @message %>
   </div>
 </div>

@@ -18,7 +18,11 @@
     background-image: url("../images/bg.png");
     padding-top: 70px;
  }
- .signin {
+ .homeheader {
+     color: orange;
+     font-size: 82px;
+ }
+ .sign {
     font-family: 'Montserrat', sans-serif;
  }
  .navbar-brand {
@@ -27,13 +31,15 @@
 .col-centered {
     background-color: rgb(255, 219, 77);
     box-shadow: 0 10px 6px -6px #777;
-    /*border: 1px solid black;*/
     border-radius: 5px;
     float: none;
     margin: 0 auto;
     padding: 10px 0 30px 0;
 }
-
+.title-centered {
+    float: none;
+    margin: 0 auto;
+}
  @media (max-width: 1200px) {
      .navbar-header {
          float: none;

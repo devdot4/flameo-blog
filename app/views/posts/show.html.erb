@@ -1,16 +1,20 @@
 <div class="row">
-  <div class="col-md-4 col-centered text-center">
-		<%= @message %>
-		<br>
-		ID: <%= @post.id %>
-		<br>
-		Title: <%= @post.title %>
-		<br>
-		Post: <%= @post.content %>
-		<br>
+	<div class="col-md-12 title-centered text-center"><h1><%= @post.title %></h1></div>
+  <div class="col-md-4 col-centered text-center"><br><br>
+		<p class="content-centered"><%= @post.content %></p><br>
 		<% if session[:user_id] == @post.user_id %>
 			<%= link_to "Edit", edit_post_path(@post) %>
 			<%= link_to "Delete", post_path(@post), method: :delete,	data: { confirm: "Do you really want to delete your post?" } %>
 		<% end %>
 	</div>
+</div>
+<div class="row">
+		<% @post.comments.each do |comment| %>
+	<div class="text-center user">
+		<a href="/user/<%= comment.user.id %>"><%= comment.user.username %></a>
+	</div>
+	<div class="text-center user-content">
+		<%= comment.content %>
+	</div>
+	<% end %>
 </div>

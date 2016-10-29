@@ -21,3 +21,8 @@ $(window).resize(function() {
     var viewportWidth = $(window).width();
     $('#monitor').html(viewportWidth);
 });
+
+jQuery("#clickMe").on('click',function(){
+    var vi = jQuery("#iframe");
+    vi.attr("src", vi.data("autoplay-src") );
+});
