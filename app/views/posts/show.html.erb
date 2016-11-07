@@ -11,10 +11,11 @@
 <div class="row">
 		<% @post.comments.each do |comment| %>
 	<div class="text-center user">
-		<a href="/user/<%= comment.user.id %>"><%= comment.user.username %></a>
+		<!--<a href="/posts/<%= comment.post.user.id %>">--><%= comment.user.username %></a>
 	</div>
 	<div class="text-center user-content">
 		<%= comment.content %>
 	</div>
 	<% end %>
 </div>
+<%= render 'comments/form' %>

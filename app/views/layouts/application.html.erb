@@ -37,7 +37,8 @@
                   <a class="navbar-link"><%= "#{@user.username}" if @user %></a>
                 </p>
                 <p class="navbar-text">
-                    <a href="/signout" class="navbar-link">Sign out</a>
+                    <!-- <a href="/signout" class="navbar-link">Sign out</a> -->
+                    <%= link_to 'sign out',signout_path %>
                 </p>
                 <% else %>
                 <p class="navbar-text">

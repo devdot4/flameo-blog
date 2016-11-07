@@ -32,8 +32,7 @@ class UsersController < ApplicationController
     end
   end
   def destroy
-    User.delete(user_params)
-    session.destroy
+    User.delete
     redirect_to url_for(:controller => :users, :action => :index)
  end
 
@@ -54,9 +53,10 @@ class UsersController < ApplicationController
   end
 
   def signout
-    session.destroy
-    redirect_to url_for(:controller => :users, :action => :signin)
+    session[:user_id] = nil
+    redirect_to root_path
   end
+  
  private
  def user_params
    params.require(:user).permit(:username, :password, :email)

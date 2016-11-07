@@ -4,7 +4,7 @@
     <%= @message %>
     <br>
     <% @posts.each do |post| %>
-      <%= link_to post.title, post_path(post.id) %> <br>
+      <%= link_to post.title, comment_path(post.id) %> <br>
     <% end  %>
   </div>
 </div>

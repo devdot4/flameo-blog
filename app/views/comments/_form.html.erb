@@ -1,0 +1,13 @@
+
+
+<div class="row">
+  <div class="col-md-4 col-centered text-center">
+    <%= form_for :comment, url: {controller: :comments, action: :create} do |f| %>
+      <%= f.hidden_field :user_id, :value => session[:user_id] %>
+      <%= f.hidden_field :post_id, :value => params[:id] %> <br>
+      <%= f.label :content %>
+      <%= f.text_area :content %> <br>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
