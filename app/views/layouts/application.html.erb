@@ -32,13 +32,10 @@
                 <% end %>
             </ul>
             <div class="navbar-header pull-right">
-                <% if session[:user_id] %>
-                <p class="navbar-text">
-                  <a class="navbar-link"><%= "#{@user.username}" if @user %></a>
-                </p>
+                <% if session[:user_id]%>
                 <p class="navbar-text">
                     <!-- <a href="/signout" class="navbar-link">Sign out</a> -->
-                    <%= link_to 'sign out',signout_path %>
+                    <%= link_to 'Sign out',signout_path %>
                 </p>
                 <% else %>
                 <p class="navbar-text">

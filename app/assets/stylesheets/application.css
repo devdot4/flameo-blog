@@ -18,6 +18,16 @@
     background-image: url("../images/bg.png");
     padding-top: 70px;
  }
+
+ .user-comment {
+    background-color: rgb(255, 219, 77);
+    box-shadow: 0 10px 6px -6px #777;
+    border-radius: 5px;
+    float: none;
+    margin: 0 auto;
+    padding: 10px 0 30px 0;
+ }
+
  .homeheader {
      color: orange;
      font-size: 82px;
