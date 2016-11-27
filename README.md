@@ -10,7 +10,7 @@ $ rails s          <- To run the server
 ```
 ### Go to (on browser)
 ```
-$ localhost:3000
+http://localhost:3000/
 ```
 You are able to:
 - Sign up/Sign in
@@ -21,10 +21,10 @@ You are able to:
 
 ### Routes
 ```
-$ localhost:3000/         <- Homepage
-$ localhost:3000/about_us <- About us
-$ localhost:3000/users    <- All users
-$ localhost:3000/posts    <- All posts
-$ localhost:3000/signup   <- Signup page
-$ localhost:3000/signin   <- Signin page
+http://localhost:3000/         <- Homepage
+http://localhost:3000/about_us <- About us
+http://localhost:3000/users    <- All users
+http://localhost:3000/posts    <- All posts
+http://localhost:3000/signup   <- Signup page
+http://localhost:3000/signin   <- Signin page
 ```
