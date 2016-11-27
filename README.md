@@ -5,8 +5,8 @@
 ---
 ### Install and run
 ```
-$ gem install 
-$ rails s
+$ bundle install   <- To install all rubygems needed for this project
+$ rails s          <- To run the server
 ```
 ### Go to (on browser)
 ```
