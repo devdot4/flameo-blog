@@ -15,7 +15,7 @@ You are able to:
 - See all users
 - Edit or delete your profile
 - See all posts
-- Make a post/edit and delete it
+- Make a post, edit or delete it
 
 # Routes
 ```
